@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stranger Monitoring System</title>
+
+    </head>
+  <body>
+    <h1 id="two"></h1>
+    <h1 id="one"></h1>
+    
+
+
+    
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCwnjkJM4Xbtwbo6_tEEocRWH4lP_yL_74",
+    authDomain: "cse323-b94ea.firebaseapp.com",
+    databaseURL: "https://cse323-b94ea.firebaseio.com",
+    projectId: "cse323-b94ea",
+    storageBucket: "cse323-b94ea.appspot.com",
+    messagingSenderId: "645861232955"
+  };
+  firebase.initializeApp(config);
+
+
+       var two = document.getElementById('two');
+       var dbRef2 = firebase.database().ref().child('id2');
+       dbRef2.on('value',snap => two.innerText = snap.val());
+       var one = document.getElementById('one');
+       var dbRef = firebase.database().ref().child('id');
+       dbRef.on('value',snap => one.innerText = snap.val());
+
+
+        </script>
+
+  </body>
+</html>
+
+
